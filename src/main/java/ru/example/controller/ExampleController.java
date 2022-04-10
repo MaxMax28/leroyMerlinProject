@@ -1,23 +1,25 @@
 package ru.example.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-import ru.example.dto.TestClassDto;
-import ru.example.service.TestClassService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import ru.example.dto.StatusTestClassDto;
+import ru.example.model.StatusTestClass;
+import ru.example.service.StatusTestClassService;
 
 @RestController
 public class ExampleController {
 
-    private final TestClassService testClassService;
+    private final StatusTestClassService statusTestClassService;
 
     @Autowired
-    public ExampleController(TestClassService testClassService) {
-        this.testClassService = testClassService;
+    public ExampleController(StatusTestClassService statusTestClassService) {
+        this.statusTestClassService = statusTestClassService;
     }
 
     @GetMapping("/api/v1/test")
-    public TestClassDto simpleGetEndpoint() {
-        return testClassService.getTestClassDto();
+    public ResponseEntity<StatusTestClassDto> simpleGetEndpoint() {
+        return new ResponseEntity<>(statusTestClassService.getTestClassDto(new StatusTestClass()), HttpStatus.OK);
     }
 }

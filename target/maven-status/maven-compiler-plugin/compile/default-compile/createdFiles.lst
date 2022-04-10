@@ -1,4 +1,9 @@
-ru/example/healthIndicator/MyHealthIndicator.class
-ru/example/controller/ExampleController$LeroyTestClass.class
-ru/example/StartSpringBootLeroyProject.class
+ru/example/service/TestClassService.class
+ru/example/mapper/TestClassMapper.class
 ru/example/controller/ExampleController.class
+ru/example/dto/DoWork.class
+ru/example/dto/TestClassDto.class
+ru/example/mapper/impl/TestClassMapperImpl.class
+ru/example/healthIndicator/MyHealthIndicator.class
+ru/example/model/StatusTestClass.class
+ru/example/StartSpringBootLeroyProject.class
